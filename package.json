@@ -1,0 +1,19 @@
+{
+  "name": "cat_poc",
+  "version": "1.0.0",
+  "description": "client access tool- Proof of Concept",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeforAustralia/dscv.git"
+  },
+  "author": "sam wijesinha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeforAustralia/dscv/issues"
+  },
+  "homepage": "https://github.com/CodeforAustralia/dscv#readme"
+}
