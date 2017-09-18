@@ -21,3 +21,5 @@ const server = app.listen(app.get('port'), () => {
 app.get('/', (req, res) => {
   res.render('index', { title: 'Hey', message: 'Hello there!' });
 })
+
+module.exports = app;
