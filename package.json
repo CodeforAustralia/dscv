@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/CodeforAustralia/dscv/issues"
   },
-  "homepage": "https://github.com/CodeforAustralia/dscv#readme"
+  "homepage": "https://github.com/CodeforAustralia/dscv#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }
