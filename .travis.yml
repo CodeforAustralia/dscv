@@ -6,8 +6,6 @@ cache:
   directories:
     - node_modules
 
-services: # enable various services
-  - postgresql     # will start mongodb
 
 deploy:
 - provider: s3
