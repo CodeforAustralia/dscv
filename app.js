@@ -27,7 +27,7 @@ app.set('port', process.env.PORT || 3000);
 });
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Client Assessment Tool' }});
+  res.render('index', { title: 'Client Assessment Tool' });
 });
 
 
