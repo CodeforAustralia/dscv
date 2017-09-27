@@ -24,7 +24,6 @@ deploy:
   key: latest.zip
   bundle_type: zip
   application: dscv
-  deployment_group: dscv
   region: us-east-2
   on: *2
 script:
