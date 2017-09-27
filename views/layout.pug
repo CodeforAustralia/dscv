@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    script(src="https://unpkg.com/jquery")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="https://surveyjs.azureedge.net/0.12.28/survey.jquery.min.js")
+    
+
+    link(href='https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  
+  body
+    block content
+      header.top
+        nav.nav
+
+    block scripts
+      script(src="/js/survey.js")
+      
