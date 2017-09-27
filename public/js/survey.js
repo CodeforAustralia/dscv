@@ -1,4 +1,4 @@
-console.log("connected")
+console.log("connected survey.js")
 
 Survey.Survey.cssType = "bootstrap";
 
