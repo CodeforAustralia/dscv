@@ -21,26 +21,29 @@ font-family: 'Montserrat', sans-serif;
 
 .home-btn {
   color: rgba(255, 158, 27, 0.8);
-  background-color: rgba(83, 86, 90, 0.9);
-  border: none;
+  background-color: white;
+  border: 2px black solid;
 }
 
 .home-btn:hover {
-  background-color: rgba(255, 158, 27, 0.9);
+  background-color: rgba(83, 86, 90, 0.9);
+  border: 2px rgba(83, 86, 90, 0.9) solid;
+
 
 }
 /*issue type*/
 a:hover, a:focus {
-  color: #2a6496;
+  color: rgba(83, 86, 90, 0.9);
   text-decoration: none;
 }
 .square-service-block{
 	position:relative;
 	overflow:hidden;
 	margin:15px auto;
+  border: 2px solid;
+  border-radius: 5px;
 	}
 .square-service-block a {
-  background-color: rgba(83, 86, 90, 0.9);
   border-radius: 5px;
   display: block;
   padding: 60px 20px;
@@ -48,9 +51,9 @@ a:hover, a:focus {
   width: 100%;
 }
 .square-service-block a:hover{
-  background-color: rgba(255, 158, 27, 0.9);
+  background-color: rgba(83, 86, 90, 0.9);
   border-radius: 5px;
-  color: white;
+  /*color: #fff;*/
 }
 
 h2.ssb-title {
