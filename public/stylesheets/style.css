@@ -4,7 +4,7 @@ padding-top: 120px;
 
 /* Margin bottom by footer height */
  margin-bottom: 60px;
-
+font-family: 'Montserrat', sans-serif;
 }
 
 /*navbar*/
@@ -13,6 +13,22 @@ padding-top: 120px;
   padding: 25px 0px 25px 0px;
 }
 
+.home {
+  padding-top: 50px;
+  text-align: right;
+  color: rgba(255, 158, 27, 0.8);
+}
+
+.home-btn {
+  color: rgba(255, 158, 27, 0.8);
+  background-color: rgba(83, 86, 90, 0.9);
+  border: none;
+}
+
+.home-btn:hover {
+  background-color: rgba(255, 158, 27, 0.9);
+
+}
 /*issue type*/
 a:hover, a:focus {
   color: #2a6496;
@@ -32,8 +48,9 @@ a:hover, a:focus {
   width: 100%;
 }
 .square-service-block a:hover{
-  background-color: rgba(255, 158, 27, 0.1);
+  background-color: rgba(255, 158, 27, 0.9);
   border-radius: 5px;
+  color: white;
 }
 
 h2.ssb-title {
@@ -51,12 +68,14 @@ h2.ssb-title {
   background-color: #1ab394;
   color: #fff;
   border-radius: 3px;
+}
 
-  &:hover, &:focus {
+.btn-green:hover,
+.btn-green:focus {
     background-color: #18a689;
     color: #fff;
-  }
 }
+
 
 
 
