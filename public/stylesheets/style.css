@@ -7,6 +7,11 @@ padding-top: 120px;
 font-family: 'Montserrat', sans-serif;
 }
 
+h4 {
+  font-size: 2em;
+  color: grey;
+
+}
 /*navbar*/
 .poc_title {
   color: rgba(255, 158, 27, 0.8);
@@ -28,9 +33,13 @@ font-family: 'Montserrat', sans-serif;
 .home-btn:hover {
   background-color: rgba(83, 86, 90, 0.9);
   border: 2px rgba(83, 86, 90, 0.9) solid;
-
-
 }
+
+/*container workflow*/
+.workflow {
+  padding-top: 40px;
+}
+
 /*issue type*/
 a:hover, a:focus {
   color: rgba(83, 86, 90, 0.9);
@@ -84,7 +93,7 @@ h2.ssb-title {
     background-color: #fff;
 }
 
-.sq-root {
+/*.sq-root {
   border: 1px solid gray;
   border-left: 4px solid #18a689;
   border-radius: 5px;
@@ -94,7 +103,7 @@ h2.ssb-title {
 
 .sq-root-cb {
   border-left: 4px solid orange;
-}
+}*/
 
 .sq-title {
   font-size: 20px;
@@ -102,7 +111,7 @@ h2.ssb-title {
 }
 
 .sq-title-required {
-  color: red;
+  color: orange;
 }
 
 .sq-label {

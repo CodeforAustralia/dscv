@@ -1,0 +1,342 @@
+{
+ "completedHtml": "<p><h4>Thank you for sharing this information with us.</h4></p>",
+ "pages": [
+  {
+   "name": "Client Information and Analysis",
+   "elements": [
+    {
+     "type": "panel",
+     "name": "client_info",
+     "elements": [
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "yes",
+         "text": "Yes"
+        },
+        {
+         "value": "no",
+         "text": "No"
+        }
+       ],
+       "isRequired": true,
+       "name": "client_property",
+       "title": "Is the Client the Owner of the Property?"
+      },
+      {
+       "type": "html",
+       "html": "<h3>If the Client is not the Owner of the Property or is Renting</h3>\n\n<p>In order to make decisions for the property you will need to have the owner’s permission.  You should consult with them before doing anything.</p>\n\n<p>Renter Information</p>",
+       "name": "not_owner",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{client_property}= 'no'"
+      },
+      {
+       "type": "checkbox",
+       "choices": [
+        {
+         "value": "occuper",
+         "text": "Owner Occupier"
+        },
+        {
+         "value": "invest",
+         "text": "Investment"
+        },
+        {
+         "value": "new_build",
+         "text": "New Build"
+        },
+        {
+         "value": "existing",
+         "text": "Existing Property"
+        }
+       ],
+       "isRequired": true,
+       "name": "property_type",
+       "title": "Choose the applicable attributes:"
+      },
+      {
+       "type": "text",
+       "name": "client_suburb",
+       "width": "150",
+       "title": "What is the Clients Suburb?",
+       "isRequired": true
+      }
+     ],
+     "title": "Client Information"
+    },
+    {
+     "type": "panel",
+     "name": "issue_analysis",
+     "elements": [
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "damage",
+         "text": "Someone has damaged my fence"
+        },
+        {
+         "value": "replace_repair",
+         "text": "I want to replace or repair my fence"
+        },
+        {
+         "value": "disagree",
+         "text": "My neighbour built a fence I don't agree with"
+        },
+        {
+         "value": "new_property",
+         "text": "The property is new and I need to erect a Fence"
+        },
+        {
+         "value": "notice_to_fence",
+         "text": "I have received a Notice to Fence and not sure what to do"
+        }
+       ],
+       "isRequired": true,
+       "name": "issue",
+       "title": "What is the issue about?"
+      },
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "yes",
+         "text": "Yes"
+        },
+        {
+         "value": "no",
+         "text": "No"
+        }
+       ],
+       "name": "contractor_quote",
+       "title": "Do you have quotes from a independent fencing contractor?"
+      },
+      {
+       "type": "html",
+       "html": "<h3>If the Client has not obtained a quote:</h3>\n\n<p>We would encourage you to share your fencing quote with your neighbour. You may like to include a letter outlining your proposal. </p>\n\n<p>You may also consider submitting a NTF as early as possible and waiting 30 days for a response. </p>",
+       "name": "no_quote",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{contractor_quote} = 'no'"
+      },
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "yes",
+         "text": "Yes"
+        },
+        {
+         "value": "no",
+         "text": "No"
+        }
+       ],
+       "name": "neighbour_contactable",
+       "title": "Are you able to contact your neighbour?"
+      },
+      {
+       "type": "html",
+       "html": "<h3>If the Client cannot contact the neighbour</h3>\n\n<p>If you do not have the owners details you can contact the Council or LANDATA.vic.gov.au to obtain the address of the owner next door for submitting a NTF. </p>",
+       "name": "not_spoke_to_neighbour",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{neighbour_contactable} = 'no'"
+      },
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "yes",
+         "text": "Yes"
+        },
+        {
+         "value": "no",
+         "text": "No"
+        }
+       ],
+       "name": "spoken_to_neighbour",
+       "title": "Have you spoken to or contacted your neighbour?"
+      },
+      {
+       "type": "html",
+       "html": "<h3>Client has not spoken to their neighbour</h3>\n\n<p>We would encourage you to share your fencing quote with your neighbour. You may like to include a letter outlining your proposal. \nYou may also consider submitting a NTF as early as possible and waiting 30 days for a response. </p>",
+       "name": "information_no_neighbour_contact",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{spoken_to_neighbour} = 'no'"
+      },
+      {
+       "type": "checkbox",
+       "choices": [
+        {
+         "value": "disagree_cost",
+         "text": "We disagree over who who should pay what"
+        },
+        {
+         "value": "disagree_fence_type",
+         "text": "We disagree on what type of fence to build"
+        },
+        {
+         "value": "disagree_boundary",
+         "text": "We disagree where to build the fence"
+        },
+        {
+         "value": "disagree_retaining",
+         "text": "The fence includes a retaining wall"
+        },
+        {
+         "value": "disagree_damage",
+         "text": "One of us has caused damage to the fence"
+        }
+       ],
+       "name": "disagreement_type",
+       "title": "Why do you and your neighbour disagree?"
+      },
+      {
+       "type": "html",
+       "html": "<h3>There is a disagreement on what type of fence to build </h3>\n\n<p>Fences are typically replaced like-for-like (ie. The same as what was there before)\nThere is no 'standard' fence. Instead, people should consider what is normal for the area and what their individual requirements are. \nIf you disagree over what type of fence to build, you should talk first to try coming to a solution. </p>",
+       "name": "advice_type_of_fence",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{disagreement_type} contains 'disagree_fence_type'"
+      },
+      {
+       "type": "html",
+       "html": "<h3>There is a disagreement on who should pay what</h3>\n\n<p>Generally, fences are shared 50/50, but there are some exceptions\nFences are typically replaced like-for-like (ie. The same as what was there before)\nIf one of you wants a more expensive fence, that person would usually pay the difference\nThe only way you can force someone to do something is to bring a fencing action through the Magistrates' court. If you intend to do this, you should seek legal advice. \nIf your neighbour can't afford a new fence, you may like to negotiate with them to work out a friendly solution. You could try mediation or coming to your own agreement. </p>",
+       "name": "advice_cost",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{disagreement_type} contains 'disagree_cost'"
+      },
+      {
+       "type": "html",
+       "html": "<h3>There is a retaining wall</h3>\n\n<p>Retaining walls are not covered by the Fences Act, so the general principles of fencing may not apply\nIf one neighbour caused the need for a retaining wall (ie. Excavated at the property) then they would usually pay the full cost\nIt may be best to try and negotiate with your neighbour to come to an agreement. You could try a private discussion or mediation.\nHow much will a new retaining wall cost? Where could it be built? What happens if a retaining wall is not built?</p>",
+       "name": "advice_retaining_wall",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{disagreement_type} = 'disagree_retaining'"
+      },
+      {
+       "type": "html",
+       "html": "<h3>A party has damaged the fence</h3>\n\n<p>Generally, the party that damages the fence must pay the full cost for repair or replacement\nYou should consider the pre-existing condition of the fence. For example, if the fence was old and required replacement anyway, the damage may not be the primary issue. \nIt may be best to try and negotiate with your neighbour to come to an agreement. You could try a private discussion or mediation.\nYou may like to submit a NTF along with details of what you expect the other party pay.</p>",
+       "name": "advice_damage",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{disagreement_type} contains 'disagree_damage'"
+      },
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "yes",
+         "text": "Yes"
+        },
+        {
+         "value": "no",
+         "text": "No"
+        }
+       ],
+       "name": "boundary_survey",
+       "title": "Have you had a boundary survey conducted?",
+       "visible": false,
+       "visibleIf": "{disagreement_type} contains 'disagree_boundary'"
+      },
+      {
+       "type": "html",
+       "html": "<h3>The Client has conducted a Boundary Survey</h3>\n\n<p>The Fences Act allows for \"give and take\" fences, which means fences that are built around obstacles (ie. Not in a straight line)\nFences are typically replaced like-for-like (ie. The same as what was there before)\nIf you or the neighbour wish to claim adverse possession, you should seek legal advice. Adverse Possession is a complex legal issue and the DSCV cannot provide advice around these disputes. \nIf you don't agree where the fence should be built, you should attempt to negotiate first to reach a solution\nWhy do you still disagree? Are there things that you can negotiate over?</p>",
+       "name": "advice_boundary_survey",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{boundary_survey} = 'yes'"
+      },
+      {
+       "type": "html",
+       "html": "<h3>The Client has not conducted a boundary survey</h3>\n\n<p>Obtaining a professionals opinion through a boundary survey may help you reach an outcome\nYou can submit a \"Boundary Survey Notice\" to your neighbour, which can help you split the costs of obtaining the quote once you've obtained it.</p>",
+       "name": "advice_no_boundary_survey",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{boundary_survey} = 'no'"
+      },
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "yes",
+         "text": "Yes"
+        },
+        {
+         "value": "no",
+         "text": "No"
+        }
+       ],
+       "name": "ntf_submit",
+       "title": "Have you submitted a Notice to Fence?",
+       "visible": false,
+       "visibleIf": "{issue} = 'notice_to_fence'"
+      },
+      {
+       "type": "html",
+       "html": "<h3> Notice to Fence </h3>\n\n<p>\nA NTF is a formal fencing document that is contained within the Fences Act.\nThe NTF formalises your proposal to have the fence repaired/replaced and gives your neigbour 30 days to respond. \nA copy is available from our website and should be submitted with at least one quote.\nThere is no requirement to do so, but we recommend submitting this via Registered Post\nIf your neighbour responds and agrees with your proposal, you may build the fence as agreed.\nIf your neighbour responds and disagrees with your proposal, you will need to reach an agreement together or have a Magistrate decide for you.\nIf your neighbour has not responded within 30 days then the Fences Act provides that you may build the fence and seek to recover costs from the neighbour through the Magistrates' Court. \nAt any time you can consider mediation through the DSCV. Mediation is free, confidential and voluntary, and can help parties reach an agreement where they are having difficulty themselves. \n\n\n</p>",
+       "name": "notice_to_fence",
+       "visible": false,
+       "visibleIf": "{ntf_submit} = 'no' or {spoken_to_neighbour} = 'no' or {issue} = 'notice_to_fence'"
+      },
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "yes",
+         "text": "Yes"
+        },
+        {
+         "value": "no",
+         "text": "No"
+        }
+       ],
+       "name": "ntf_neighbour_response",
+       "title": "Has your neighbour responded?",
+       "visible": false,
+       "visibleIf": "{issue} = 'notice_to_fence' and {ntf_submit} = 'yes'"
+      },
+      {
+       "type": "radiogroup",
+       "choices": [
+        {
+         "value": "yes",
+         "text": "Yes"
+        },
+        {
+         "value": "no",
+         "text": "No"
+        }
+       ],
+       "name": "ntf_30_days",
+       "title": "Have you waited 30 days?",
+       "visible": false,
+       "visibleIf": "{issue} = 'notice_to_fence' and {ntf_neighbour_response} = 'no'"
+      },
+      {
+       "type": "html",
+       "html": "<h3>The Client has submitted a Notice to Fence and the neighbour has not responded in 30 days</h3>\n\n<p>If your neighbour has not responded within 30 days then the Fences Act provides that you may build the fence and seek to recover costs from the neighbour through the Magistrates' Court. \nYou can still negotiate with your neighbour and it may be useful to try mediation. </p>",
+       "name": "ntf_30_days_no_response",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{ntf_neighbour_response} = 'no' and {ntf_30_days} = 'yes'"
+      },
+      {
+       "type": "html",
+       "html": "<h3> The Client has submitted a Notice to Fence, however it has not been 30 days</h3>\n\n<p>You need to give your neighbour time to respond to your proposal. This period is 30 days. \nIf you have not heard from your neighbour within 30 days you may like to approach them for mediation.</p>",
+       "name": "ntf_30_days_not_lapsed",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{ntf_neighbour_response} = 'no' and {ntf_30_days} = 'no'"
+      }
+     ],
+     "title": "Understand the Clients need and Analyse the Issue"
+    }
+   ]
+  }
+ ]
+}
