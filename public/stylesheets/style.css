@@ -93,9 +93,9 @@ h2.ssb-title {
     background-color: #fff;
 }
 
-/*.sq-root {
+.sq-root {
   border: 1px solid gray;
-  border-left: 4px solid #18a689;
+  border-left: 4px solid orange;
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 30px;
@@ -103,7 +103,7 @@ h2.ssb-title {
 
 .sq-root-cb {
   border-left: 4px solid orange;
-}*/
+}
 
 .sq-title {
   font-size: 20px;

@@ -6,7 +6,6 @@
    "elements": [
     {
      "type": "panel",
-     "name": "client_info",
      "elements": [
       {
        "type": "radiogroup",
@@ -57,20 +56,6 @@
        "title": "Choose the applicable attributes:"
       },
       {
-       "type": "text",
-       "name": "client_suburb",
-       "width": "150",
-       "title": "What is the Clients Suburb?",
-       "isRequired": true
-      }
-     ],
-     "title": "Client Information"
-    },
-    {
-     "type": "panel",
-     "name": "issue_analysis",
-     "elements": [
-      {
        "type": "radiogroup",
        "choices": [
         {
@@ -98,6 +83,28 @@
        "name": "issue",
        "title": "What is the issue about?"
       },
+      {
+       "type": "html",
+       "html": "<h3> Notice to Fence </h3>\n\n<p>\nA NTF is a formal fencing document that is contained within the Fences Act.\nThe NTF formalises your proposal to have the fence repaired/replaced and gives your neigbour 30 days to respond. \nA copy is available from our website and should be submitted with at least one quote.\nThere is no requirement to do so, but we recommend submitting this via Registered Post\nIf your neighbour responds and agrees with your proposal, you may build the fence as agreed.\nIf your neighbour responds and disagrees with your proposal, you will need to reach an agreement together or have a Magistrate decide for you.\nIf your neighbour has not responded within 30 days then the Fences Act provides that you may build the fence and seek to recover costs from the neighbour through the Magistrates' Court. \nAt any time you can consider mediation through the DSCV. Mediation is free, confidential and voluntary, and can help parties reach an agreement where they are having difficulty themselves. \n\n\n</p>",
+       "name": "notice_to_fence",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{issue} =  'notice_to_fence'"
+      },
+      {
+       "type": "text",
+       "name": "client_suburb",
+       "width": "150",
+       "title": "What is the Clients Suburb?",
+       "isRequired": true
+      }
+     ],
+     "name": "client_info",
+     "title": "Client Information"
+    },
+    {
+     "type": "panel",
+     "elements": [
       {
        "type": "radiogroup",
        "choices": [
@@ -157,7 +164,9 @@
         }
        ],
        "name": "spoken_to_neighbour",
-       "title": "Have you spoken to or contacted your neighbour?"
+       "title": "Have you spoken to or contacted your neighbour?",
+       "visible": false,
+       "visibleIf": "{neighbour_contactable} = 'yes'"
       },
       {
        "type": "html",
@@ -258,7 +267,14 @@
        "startWithNewLine": false,
        "visible": false,
        "visibleIf": "{boundary_survey} = 'no'"
-      },
+      }
+     ],
+     "name": "issue_analysis",
+     "title": "Understand the Clients need and Analyse the Issue"
+    },
+    {
+     "type": "panel",
+     "elements": [
       {
        "type": "radiogroup",
        "choices": [
@@ -272,16 +288,7 @@
         }
        ],
        "name": "ntf_submit",
-       "title": "Have you submitted a Notice to Fence?",
-       "visible": false,
-       "visibleIf": "{issue} = 'notice_to_fence'"
-      },
-      {
-       "type": "html",
-       "html": "<h3> Notice to Fence </h3>\n\n<p>\nA NTF is a formal fencing document that is contained within the Fences Act.\nThe NTF formalises your proposal to have the fence repaired/replaced and gives your neigbour 30 days to respond. \nA copy is available from our website and should be submitted with at least one quote.\nThere is no requirement to do so, but we recommend submitting this via Registered Post\nIf your neighbour responds and agrees with your proposal, you may build the fence as agreed.\nIf your neighbour responds and disagrees with your proposal, you will need to reach an agreement together or have a Magistrate decide for you.\nIf your neighbour has not responded within 30 days then the Fences Act provides that you may build the fence and seek to recover costs from the neighbour through the Magistrates' Court. \nAt any time you can consider mediation through the DSCV. Mediation is free, confidential and voluntary, and can help parties reach an agreement where they are having difficulty themselves. \n\n\n</p>",
-       "name": "notice_to_fence",
-       "visible": false,
-       "visibleIf": "{ntf_submit} = 'no' or {spoken_to_neighbour} = 'no' or {issue} = 'notice_to_fence'"
+       "title": "Have you submitted a Notice to Fence?"
       },
       {
        "type": "radiogroup",
@@ -298,7 +305,7 @@
        "name": "ntf_neighbour_response",
        "title": "Has your neighbour responded?",
        "visible": false,
-       "visibleIf": "{issue} = 'notice_to_fence' and {ntf_submit} = 'yes'"
+       "visibleIf": "{ntf_submit} = 'yes'"
       },
       {
        "type": "radiogroup",
@@ -315,15 +322,7 @@
        "name": "ntf_30_days",
        "title": "Have you waited 30 days?",
        "visible": false,
-       "visibleIf": "{issue} = 'notice_to_fence' and {ntf_neighbour_response} = 'no'"
-      },
-      {
-       "type": "html",
-       "html": "<h3>The Client has submitted a Notice to Fence and the neighbour has not responded in 30 days</h3>\n\n<p>If your neighbour has not responded within 30 days then the Fences Act provides that you may build the fence and seek to recover costs from the neighbour through the Magistrates' Court. \nYou can still negotiate with your neighbour and it may be useful to try mediation. </p>",
-       "name": "ntf_30_days_no_response",
-       "startWithNewLine": false,
-       "visible": false,
-       "visibleIf": "{ntf_neighbour_response} = 'no' and {ntf_30_days} = 'yes'"
+       "visibleIf": "{ntf_neighbour_response} = 'no'"
       },
       {
        "type": "html",
@@ -332,9 +331,18 @@
        "startWithNewLine": false,
        "visible": false,
        "visibleIf": "{ntf_neighbour_response} = 'no' and {ntf_30_days} = 'no'"
+      },
+      {
+       "type": "html",
+       "html": "<h3>The Client has submitted a Notice to Fence and the neighbour has not responded in 30 days</h3>\n\n<p>If your neighbour has not responded within 30 days then the Fences Act provides that you may build the fence and seek to recover costs from the neighbour through the Magistrates' Court. \nYou can still negotiate with your neighbour and it may be useful to try mediation. </p>",
+       "name": "ntf_30_days_no_response",
+       "startWithNewLine": false,
+       "visible": false,
+       "visibleIf": "{ntf_neighbour_response} = 'no' and {ntf_30_days} = 'yes'"
       }
      ],
-     "title": "Understand the Clients need and Analyse the Issue"
+     "name": "notice_to_fence_panel",
+     "title": "Notice to Fence"
     }
    ]
   }
