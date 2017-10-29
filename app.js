@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes);
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 443);
   const server = app.listen(app.get('port'), () => {
     console.log(`Express running → PORT ${server.address().port}`);
 });
