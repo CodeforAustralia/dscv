@@ -1,0 +1,14 @@
+
+<script type='text/javascript'>
+      window.onload = function() {
+        var form = new FormioForm(document.getElementById('formio'));
+        form.src = '{{ formio_form }}'
+      };
+    </script>
+
+<div class="container workflow">
+  <h1>{{ title }}</h1>
+
+  <div id='formio'></div>
+
+</div>
