@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 /* GET fences page. */
 router.get('/fences', function(req, res, next) {
-  res.render('issue', { title: 'Issue Type: Fences', formio_form: 'https://cqaclfkfwhksaeu.form.io/fencing'});
+  res.render('issue', { title: 'Issue Type: Fences', formio_form: 'https://cqaclfkfwhksaeu.form.io/dscv-tool'});
 
 });
 
